@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(129, 129, 129);
+}
+
+.article-margin {
+    color: rgb(64, 241, 79);
+    font-size: 1rem;
+    font-weight: bolder;
+    width: 30%;
+    padding: 2%;
+}
+
+.card-space {
+    background-color: rgb(185, 185, 185);
+    margin:2% -20% 0 40%;
+}
+
+.first-top {
+    margin-top: 10%
+}
+
+.title {
+    font-size: 3rem;
+    font-family: cursive
+}

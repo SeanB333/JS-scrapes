@@ -1,0 +1,46 @@
+{{!-- nav bar --}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-5 fixed-top shadow">
+    <img src="/img/sc-ape.png" alt="">
+    <a class="ml-5 navbar-brand title" href="#">Dev_Scr_ape</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active mx-2"></li>
+            <li class="nav-item"></li>
+        </ul>
+        <section class="article-margin">New Articles for <span id="datetime"></span></section>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 mr-1" type="submit">Search</button>
+            <a href="/scrape" class="btn btn btn-outline-success mr-1" role="button" aria-disabled="true">Scrape</a>
+            <a href="/clear" class="btn btn btn-outline-success" role="button" aria-disabled="true">Clear</a>
+        </form>
+    </div>
+</nav>
+
+<section class="first-top">
+    <!-- Articles.  -->
+    {{#each article}}
+    <div class="row shadow rounded card-space">
+        <div class="col-12">
+            <div class="card m-3 shadow">
+                <div class="card-body text-light bg-dark">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text w-50">{{summary}}</p>
+                    <p class="card-text"><a href="{{link}}" class="text-success" target="_blank">Read more</a></p>
+                    <a href="/save/{{id}}" class="btn btn-outline-success" role="button" aria-disabled="true">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</section>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
